@@ -56,7 +56,8 @@ This function is used to check if a user is eligible to access the content based
 This internal modifier encapsulates the age verification logic. It requires that the provided `_userAge` is greater than or equal to the `minAge` specified during contract deployment. If the condition is satisfied, the function or modifier that uses it is executed; otherwise, an error is thrown.
 
 ## Error Handling
-The contract includes error handling mechanisms to ensure safe execution and clear communication of access denial or other issues. Error messages are provided through the use of `require` and `revert` statements, which give detailed information about the nature of the error.
+The `require()` statement is used to raise an error if the specified condition is not met. In this case, the condition is that the user's age is at least the minimum age. If the condition is not met, the `require()` statement will raise an error with the specified message.
+The `assert()` statement is used to raise an error if the specified condition is not met. However, unlike the `require()` statement, the `assert()` statement will not prevent the contract from executing. This means that if the `assert()` statement is triggered, the contract will continue to execute, but the result of the execution may be unexpected.
 
 ## License
 
