@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 contract AgeVerification {
-    uint256 public minAge; // The minimum age required for access
+    uint256 public minAge; // The minimum age required for access.
 
     constructor(uint256 _minAge) {
         minAge = _minAge; // Initialize the contract with a minimum age requirement
