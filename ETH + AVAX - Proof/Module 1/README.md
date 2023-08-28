@@ -33,7 +33,6 @@ Basic knowledge of Ethereum and smart contracts.
 The Age Verification smart contract defines a simple access control mechanism where users are required to meet a minimum age requirement in order to access certain content. The contract's main components include:
 
 A constructor to set the minimum age requirement upon deployment.
-A modifier named `verifyAgeModifier` that enforces the age verification requirement.
 A function named `checkAccess` that checks whether a user is granted access based on their provided age.
 
 ## Contract Details
@@ -42,18 +41,12 @@ The contract consists of the following main components:
 ### Constructor
 The constructor initializes the `minAge` variable with the minimum age requirement specified during contract deployment. This requirement is used for age verification.
 
-#### Modifier: `verifyAgeModifier`
-The `verifyAgeModifier` modifier encapsulates the age verification logic. It requires that the user's age is greater than or equal to the minAge requirement. If the verification fails, the contract reverts with an error message.
-
 ## Functions
 ### `constructor(uint256 _minAge)`
 The constructor initializes the contract with the provided `_minAge` parameter, which sets the minimum required age for content access.
 
 ### `checkAccess(uint256 _userAge)`
 This function is used to check if a user is eligible to access the content based on their provided age (`_userAge`). It first ensures that the user's age is greater than 0, and then verifies if the user's age meets the minimum requirement using the `verifyAgeModifier` modifier. If the age requirement is met, the function returns a success message. Otherwise, it reverts with an error message.
-
-### `verifyAgeModifier(uint256 _userAge)`
-This internal modifier encapsulates the age verification logic. It requires that the provided `_userAge` is greater than or equal to the `minAge` specified during contract deployment. If the condition is satisfied, the function or modifier that uses it is executed; otherwise, an error is thrown.
 
 ## Error Handling
 The `require()` statement is used to raise an error if the specified condition is not met. In this case, the condition is that the user's age is at least the minimum age. If the condition is not met, the `require()` statement will raise an error with the specified message.
@@ -72,4 +65,6 @@ The contract is written in Solidity version 0.8.0. It should be compatible with 
 Contributions to this project are welcome. Feel free to open issues and submit pull requests to suggest improvements or fix any identified issues.
 
 ## Video Tutorial
+
+https://www.loom.com/share/957f955b9fc9477399050877a27003b2
 
