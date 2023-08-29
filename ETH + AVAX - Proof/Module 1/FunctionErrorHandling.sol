@@ -3,16 +3,17 @@ pragma solidity ^0.8.0;
 
 contract AgeVerification {
     uint256 public minAge; // The minimum age required for access.
-
+   
     constructor(uint256 _minAge) {
-        minAge = _minAge; // Initialize the contract with a minimum age requirement
+        minAge = _minAge; // Initialize the contract with a minimum age requirement        
     }
-
+     
     // Function to check if a user's age grants access to content
     function checkAccess(uint256 _userAge) external view returns (string memory) {
-        require(_userAge > 0, "Age must be greater than 0."); // Ensure age is valid
-        
-        assert(_userAge <= 100); // Assert that age is within a reasonable range (for example purposes)
+        require(_userAge > 0, "Age must be greater than 0.");
+        require(_userAge < 50, "Age should not be greater than 50.");
+
+        assert(_userAge <= 50); // Assert that age is within a reasonable range (for example purposes)
         
         if (_userAge >= minAge) {
             return "Access granted. You can now view the content."; // Age meets the requirement
